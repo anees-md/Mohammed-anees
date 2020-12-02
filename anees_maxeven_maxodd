@@ -1,0 +1,29 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner scn = new Scanner(System.in);
+		System.out.println("Enter input value");
+		String num = scn.nextLine();
+     	int i=0, j=0, max=0; //temp registers
+     	int[] arr=new int[num.length()];
+     	for(i=0;i<num.length();i++){
+     	    arr[i]=num.charAt(i)-'0';
+     	}
+		     for (j = 1; j < num.length(); j++) {
+             if (arr[j] > max){ 
+                 max = arr[j];
+                 j=j+1;}
+		     }
+		     System.out.println("max even value:"+max);
+		     for (j = 0; j < num.length(); j++) {
+             if (arr[j] > max){ 
+                 max = arr[j];
+                 j=j+1;}
+		     }
+		System.out.println("max odd value:"+max);
+		System.out.println("Number converted into Array :"+Arrays.toString(arr));
+		Arrays.sort(arr);
+		System.out.println("Sorted Array :"+Arrays.toString(arr));
+	}
+}
